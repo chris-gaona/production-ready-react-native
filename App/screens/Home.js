@@ -29,6 +29,17 @@ class Home extends Component {
     }
   }
 
+  componentWillUnmount() {
+    // clean up eventlisteners here so we don't have any memory leaks
+    NetInfo.removeEventListener('connectionChange', this.handleNetworkChange)
+  }
+
+  handleNetworkChange = (info) => {
+    console.log('====================================');
+    console.log('network info', info);
+    console.log('====================================');
+  }
+
   handleChangeText = (text) => {
     this.props.dispatch(changeCurrencyAmount(text))
   }
