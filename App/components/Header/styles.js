@@ -1,4 +1,4 @@
-import { StyleSheet, Platform, StatusBar } from 'react-native';
+import { StyleSheet, Platform, StatusBar } from 'react-native'
 
 export default StyleSheet.create({
   container: {
@@ -23,4 +23,4 @@ export default StyleSheet.create({
   icon: {
     width: 18,
   },
-});
+})

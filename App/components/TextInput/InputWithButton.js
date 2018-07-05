@@ -1,18 +1,18 @@
-import React from 'react';
-import { View, TextInput, TouchableHighlight, Text } from 'react-native';
+import React from 'react'
+import { View, TextInput, TouchableHighlight, Text } from 'react-native'
 
-import styles from './styles';
-import colors from '../../config/colors';
+import styles from './styles'
+import colors from '../../config/colors'
 
 const InputWithButton = (props) => {
-  const containerStyles = [styles.container];
+  const containerStyles = [styles.container]
   if (props.editable === false) {
-    containerStyles.push(styles.containerDisabled);
+    containerStyles.push(styles.containerDisabled)
   }
 
-  const buttonTextStyles = [styles.buttonText];
+  const buttonTextStyles = [styles.buttonText]
   if (props.textColor) {
-    buttonTextStyles.push({ color: props.textColor });
+    buttonTextStyles.push({ color: props.textColor })
   }
 
   return (
@@ -27,7 +27,7 @@ const InputWithButton = (props) => {
       <View style={styles.separator} />
       <TextInput style={styles.input} underlineColorAndroid="transparent" {...props} />
     </View>
-  );
-};
+  )
+}
 
-export default InputWithButton;
+export default InputWithButton

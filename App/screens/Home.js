@@ -1,54 +1,58 @@
-import React, { Component } from 'react';
-import { StatusBar, KeyboardAvoidingView } from 'react-native';
-import { connect } from 'react-redux';
+import React, { Component } from 'react'
+import { StatusBar, KeyboardAvoidingView, NetInfo } from 'react-native'
+import { connect } from 'react-redux'
 
-import { Container } from '../components/Container';
-import { Logo } from '../components/Logo';
-import { InputWithButton } from '../components/TextInput';
-import { ClearButton } from '../components/Button';
-import { LastConverted } from '../components/Text';
-import { Header } from '../components/Header';
-import { AlertConsumer } from '../components/Alert';
+import { Container } from '../components/Container'
+import { Logo } from '../components/Logo'
+import { InputWithButton } from '../components/TextInput'
+import { ClearButton } from '../components/Button'
+import { LastConverted } from '../components/Text'
+import { Header } from '../components/Header'
+import { AlertConsumer } from '../components/Alert'
 
-import { changeCurrencyAmount, swapCurrency, getInitialConversion } from '../actions/currencies';
+import { changeCurrencyAmount, swapCurrency, getInitialConversion } from '../actions/currencies'
 
 class Home extends Component {
   constructor(props) {
-    super(props);
+    super(props)
 
-    this.props.dispatch(getInitialConversion());
+    this.props.dispatch(getInitialConversion())
+  }
+
+  componentDidMount() {
+    NetInfo.addEventListener('connectionChange', this.handleNetworkChange)
   }
 
   componentDidUpdate() {
     if (this.props.currencyError) {
-      this.props.alertWithType('error', 'Error', this.props.currencyError);
+      this.props.alertWithType('error', 'Error', this.props.currencyError)
     }
   }
 
   handleChangeText = (text) => {
-    this.props.dispatch(changeCurrencyAmount(text));
-  };
+    this.props.dispatch(changeCurrencyAmount(text))
+  }
 
   handlePressBaseCurrency = () => {
-    this.props.navigation.navigate('CurrencyList', { title: 'Base Currency', type: 'base' });
-  };
+    this.props.navigation.navigate('CurrencyList', { title: 'Base Currency', type: 'base' })
+  }
 
   handlePressQuoteCurrency = () => {
-    this.props.navigation.navigate('CurrencyList', { title: 'Quote Currency', type: 'quote' });
-  };
+    this.props.navigation.navigate('CurrencyList', { title: 'Quote Currency', type: 'quote' })
+  }
 
   handleSwapCurrency = () => {
-    this.props.dispatch(swapCurrency());
-  };
+    this.props.dispatch(swapCurrency())
+  }
 
   handleOptionsPress = () => {
-    this.props.navigation.navigate('Options');
-  };
+    this.props.navigation.navigate('Options')
+  }
 
   render() {
-    let quotePrice = '...';
+    let quotePrice = '...'
     if (!this.props.isFetching) {
-      quotePrice = (this.props.amount * this.props.conversionRate).toFixed(2);
+      quotePrice = (this.props.amount * this.props.conversionRate).toFixed(2)
     }
 
     return (
@@ -81,14 +85,14 @@ class Home extends Component {
           <ClearButton onPress={this.handleSwapCurrency} text="Reverse Currencies" />
         </KeyboardAvoidingView>
       </Container>
-    );
+    )
   }
 }
 
 const mapStateToProps = (state) => {
-  const { baseCurrency, quoteCurrency } = state.currencies;
-  const conversionSelector = state.currencies.conversions[baseCurrency] || {};
-  const rates = conversionSelector.rates || {};
+  const { baseCurrency, quoteCurrency } = state.currencies
+  const conversionSelector = state.currencies.conversions[baseCurrency] || {}
+  const rates = conversionSelector.rates || {}
 
   return {
     baseCurrency,
@@ -99,13 +103,13 @@ const mapStateToProps = (state) => {
     isFetching: conversionSelector.isFetching,
     primaryColor: state.theme.primaryColor,
     currencyError: state.currencies.error,
-  };
-};
+  }
+}
 
-const ConnectedHome = connect(mapStateToProps)(Home);
+const ConnectedHome = connect(mapStateToProps)(Home)
 
 export default props => (
   <AlertConsumer>
     {context => <ConnectedHome alertWithType={context.alertWithType} {...props} />}
   </AlertConsumer>
-);
+)

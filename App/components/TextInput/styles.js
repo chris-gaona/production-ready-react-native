@@ -1,8 +1,8 @@
-import { StyleSheet } from 'react-native';
-import colors from '../../config/colors';
+import { StyleSheet } from 'react-native'
+import colors from '../../config/colors'
 
-const INPUT_HEIGHT = 48;
-const BORDER_RADIUS = 4;
+const INPUT_HEIGHT = 48
+const BORDER_RADIUS = 4
 
 export default StyleSheet.create({
   container: {
@@ -44,4 +44,4 @@ export default StyleSheet.create({
     color: colors.$inputText,
     fontSize: 18,
   },
-});
+})

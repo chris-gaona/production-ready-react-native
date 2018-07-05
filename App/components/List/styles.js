@@ -1,5 +1,5 @@
-import { StyleSheet } from 'react-native';
-import colors from '../../config/colors';
+import { StyleSheet } from 'react-native'
+import colors from '../../config/colors'
 
 export default StyleSheet.create({
   row: {
@@ -35,4 +35,4 @@ export default StyleSheet.create({
     width: 18,
     tintColor: colors.$white,
   },
-});
+})

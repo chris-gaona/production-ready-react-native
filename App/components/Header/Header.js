@@ -1,7 +1,7 @@
-import React from 'react';
-import { Image, TouchableOpacity, SafeAreaView } from 'react-native';
+import React from 'react'
+import { Image, TouchableOpacity, SafeAreaView } from 'react-native'
 
-import styles from './styles';
+import styles from './styles'
 
 const Header = ({ onPress }) => (
   <SafeAreaView style={styles.container}>
@@ -9,6 +9,6 @@ const Header = ({ onPress }) => (
       <Image resizeMode="contain" source={require('./images/gear.png')} style={styles.icon} />
     </TouchableOpacity>
   </SafeAreaView>
-);
+)
 
-export default Header;
+export default Header

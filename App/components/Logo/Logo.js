@@ -1,35 +1,35 @@
-import React, { Component } from 'react';
-import { View, Text, Keyboard, Animated, Platform, StyleSheet } from 'react-native';
+import React, { Component } from 'react'
+import { View, Text, Keyboard, Animated, Platform, StyleSheet } from 'react-native'
 
-import styles, { imageSizes } from './styles';
+import styles, { imageSizes } from './styles'
 
-const ANIMATION_DURATION = 250;
+const ANIMATION_DURATION = 250
 
 class Logo extends Component {
   constructor(props) {
-    super(props);
+    super(props)
 
     this.state = {
       containerImageWidth: new Animated.Value(imageSizes.$largeContainerSize),
       imageWidth: new Animated.Value(imageSizes.$largeImageSize),
-    };
+    }
   }
 
   componentDidMount() {
-    const name = Platform.OS === 'ios' ? 'Will' : 'Did';
+    const name = Platform.OS === 'ios' ? 'Will' : 'Did'
     this.keyboardDidShowListener = Keyboard.addListener(
       `keyboard${name}Show`,
       this.keyboardWillShow,
-    );
+    )
     this.keyboardDidHideListener = Keyboard.addListener(
       `keyboard${name}Hide`,
       this.keyboardWillHide,
-    );
+    )
   }
 
   componentWillUnmount() {
-    this.keyboardDidShowListener.remove();
-    this.keyboardDidHideListener.remove();
+    this.keyboardDidShowListener.remove()
+    this.keyboardDidHideListener.remove()
   }
 
   keyboardWillShow = () => {
@@ -42,7 +42,7 @@ class Logo extends Component {
         toValue: imageSizes.$smallImageSize,
         duration: ANIMATION_DURATION,
       }),
-    ]).start();
+    ]).start()
   };
 
   keyboardWillHide = () => {
@@ -55,19 +55,19 @@ class Logo extends Component {
         toValue: imageSizes.$largeImageSize,
         duration: ANIMATION_DURATION,
       }),
-    ]).start();
+    ]).start()
   };
 
   render() {
     const containerImageStyles = [
       styles.containerImage,
       { width: this.state.containerImageWidth, height: this.state.containerImageWidth },
-    ];
+    ]
     const imageStyles = [
       styles.logo,
       { width: this.state.imageWidth },
       this.props.tintColor ? { tintColor: this.props.tintColor } : null,
-    ];
+    ]
 
     return (
       <View style={styles.container}>
@@ -85,8 +85,8 @@ class Logo extends Component {
         </Animated.View>
         <Text style={styles.text}>Currency Converter</Text>
       </View>
-    );
+    )
   }
 }
 
-export default Logo;
+export default Logo

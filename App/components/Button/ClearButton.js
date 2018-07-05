@@ -1,7 +1,7 @@
-import React from 'react';
-import { Text, TouchableOpacity, Image, View } from 'react-native';
+import React from 'react'
+import { Text, TouchableOpacity, Image, View } from 'react-native'
 
-import styles from './styles';
+import styles from './styles'
 
 const ClearButton = ({ text, onPress }) => (
   <TouchableOpacity style={styles.container} onPress={onPress}>
@@ -10,6 +10,6 @@ const ClearButton = ({ text, onPress }) => (
       <Text style={styles.text}>{text}</Text>
     </View>
   </TouchableOpacity>
-);
+)
 
-export default ClearButton;
+export default ClearButton

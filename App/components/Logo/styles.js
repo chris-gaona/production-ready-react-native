@@ -1,14 +1,14 @@
-import { Dimensions, StyleSheet } from 'react-native';
-import colors from '../../config/colors';
+import { Dimensions, StyleSheet } from 'react-native'
+import colors from '../../config/colors'
 
-const imageWidth = Dimensions.get('window').width / 2;
+const imageWidth = Dimensions.get('window').width / 2
 
 export const imageSizes = {
   $smallContainerSize: imageWidth / 2,
   $smallImageSize: imageWidth / 4,
   $largeContainerSize: imageWidth,
   $largeImageSize: imageWidth / 2,
-};
+}
 
 export default StyleSheet.create({
   container: {
@@ -31,4 +31,4 @@ export default StyleSheet.create({
     marginTop: 15,
     fontWeight: '600',
   },
-});
+})

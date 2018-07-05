@@ -1,15 +1,15 @@
-import React, { Component } from 'react';
-import { ScrollView, StatusBar } from 'react-native';
-import { connect } from 'react-redux';
+import React, { Component } from 'react'
+import { ScrollView, StatusBar } from 'react-native'
+import { connect } from 'react-redux'
 
-import { ListItem, Separator } from '../components/List';
-import { changePrimaryColor } from '../actions/theme';
-import colors from '../config/colors';
+import { ListItem, Separator } from '../components/List'
+import { changePrimaryColor } from '../actions/theme'
+import colors from '../config/colors'
 
 class Themes extends Component {
   handlePressTheme = (color) => {
-    this.props.dispatch(changePrimaryColor(color));
-    this.props.navigation.goBack();
+    this.props.dispatch(changePrimaryColor(color))
+    this.props.navigation.goBack()
   };
 
   render() {
@@ -45,7 +45,7 @@ class Themes extends Component {
         />
         <Separator />
       </ScrollView>
-    );
+    )
   }
 }
-export default connect()(Themes);
+export default connect()(Themes)

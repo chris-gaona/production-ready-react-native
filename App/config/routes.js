@@ -1,9 +1,9 @@
-import { createStackNavigator } from 'react-navigation';
+import { createStackNavigator } from 'react-navigation'
 
-import Home from '../screens/Home';
-import CurrencyList from '../screens/CurrencyList';
-import Options from '../screens/Options';
-import Themes from '../screens/Themes';
+import Home from '../screens/Home'
+import CurrencyList from '../screens/CurrencyList'
+import Options from '../screens/Options'
+import Themes from '../screens/Themes'
 
 const HomeStack = createStackNavigator(
   {
@@ -30,7 +30,7 @@ const HomeStack = createStackNavigator(
   {
     headerMode: 'screen',
   },
-);
+)
 
 const CurrencyListStack = createStackNavigator({
   CurrencyList: {
@@ -39,7 +39,7 @@ const CurrencyListStack = createStackNavigator({
       headerTitle: navigation.state.params.title,
     }),
   },
-});
+})
 
 export default createStackNavigator(
   {
@@ -54,4 +54,4 @@ export default createStackNavigator(
     mode: 'modal',
     headerMode: 'none',
   },
-);
+)

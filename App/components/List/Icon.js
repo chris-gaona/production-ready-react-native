@@ -1,39 +1,39 @@
-import React from 'react';
-import { View, Image } from 'react-native';
+import React from 'react'
+import { View, Image } from 'react-native'
 
-import styles from './styles';
+import styles from './styles'
 
 const getIcon = (name) => {
   switch (name) {
     case 'arrow-forward':
-      return require('./images/arrow-forward/arrow-forward.png');
+      return require('./images/arrow-forward/arrow-forward.png')
     case 'link':
-      return require('./images/link/link.png');
+      return require('./images/link/link.png')
     case 'checkmark':
     default:
-      return require('./images/checkmark/checkmark.png');
+      return require('./images/checkmark/checkmark.png')
   }
-};
+}
 
 const Icon = ({
   visible, iconBackground, iconName, iconColor, iconSize,
 }) => {
   if (visible) {
-    const containerStyles = [styles.icon];
+    const containerStyles = [styles.icon]
     if (visible) {
-      containerStyles.push(styles.iconVisible);
+      containerStyles.push(styles.iconVisible)
     }
     if (iconBackground) {
-      containerStyles.push({ backgroundColor: iconBackground });
+      containerStyles.push({ backgroundColor: iconBackground })
     }
 
-    const iconStyles = [styles.checkIcon];
+    const iconStyles = [styles.checkIcon]
     if (iconColor) {
-      iconStyles.push({ tintColor: iconColor });
+      iconStyles.push({ tintColor: iconColor })
     }
 
     if (iconSize) {
-      iconStyles.push({ width: iconSize });
+      iconStyles.push({ width: iconSize })
     }
 
     return (
@@ -42,10 +42,10 @@ const Icon = ({
           <Image source={getIcon(iconName)} style={iconStyles} resizeMode="contain" />
         ) : null}
       </View>
-    );
+    )
   }
 
-  return <View style={styles.icon} />;
-};
+  return <View style={styles.icon} />
+}
 
-export default Icon;
+export default Icon

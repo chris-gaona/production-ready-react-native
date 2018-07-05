@@ -1,9 +1,9 @@
-import React from 'react';
-import { Animated, Text, SafeAreaView, Dimensions, TouchableOpacity } from 'react-native';
+import React from 'react'
+import { Animated, Text, SafeAreaView, Dimensions, TouchableOpacity } from 'react-native'
 
-import styles from './styles';
+import styles from './styles'
 
-const { height } = Dimensions.get('window');
+const { height } = Dimensions.get('window')
 export default class DropdownAlert extends React.Component {
   state = {
     contentHeight: height,
@@ -22,17 +22,17 @@ export default class DropdownAlert extends React.Component {
       () => {
         this.open().then(() => {
           setTimeout(() => {
-            this.close();
-          }, 3000);
-        });
+            this.close()
+          }, 3000)
+        })
       },
-    );
+    )
   };
 
   measureContent = ({ nativeEvent }) => {
     this.setState({
       contentHeight: Math.ceil(nativeEvent.layout.height),
-    });
+    })
   };
 
   open = () =>
@@ -40,7 +40,7 @@ export default class DropdownAlert extends React.Component {
       Animated.timing(this.animatedOffset, {
         toValue: 1,
         useNativeDriver: true,
-      }).start(() => resolve());
+      }).start(() => resolve())
     });
 
   close = () =>
@@ -48,7 +48,7 @@ export default class DropdownAlert extends React.Component {
       Animated.timing(this.animatedOffset, {
         toValue: 0,
         useNativeDriver: true,
-      }).start(() => resolve());
+      }).start(() => resolve())
     });
 
   render() {
@@ -65,7 +65,7 @@ export default class DropdownAlert extends React.Component {
           },
         ],
       },
-    ];
+    ]
 
     return (
       <Animated.View style={containerStyles} onLayout={this.measureContent}>
@@ -78,6 +78,6 @@ export default class DropdownAlert extends React.Component {
           </SafeAreaView>
         </TouchableOpacity>
       </Animated.View>
-    );
+    )
   }
 }

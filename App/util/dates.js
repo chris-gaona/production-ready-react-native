@@ -11,12 +11,12 @@ const monthNames = [
   'October',
   'November',
   'December',
-];
+]
 
 export const formatDate = (date) => {
-  const day = date.getDate();
-  const monthIndex = date.getMonth();
-  const year = date.getFullYear();
+  const day = date.getDate()
+  const monthIndex = date.getMonth()
+  const year = date.getFullYear()
 
-  return `${monthNames[monthIndex]} ${day}, ${year}`;
-};
+  return `${monthNames[monthIndex]} ${day}, ${year}`
+}

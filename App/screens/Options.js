@@ -1,20 +1,20 @@
-import React, { Component } from 'react';
-import { ScrollView, StatusBar, Linking } from 'react-native';
-import { ListItem, Separator, Icon } from '../components/List';
-import { AlertConsumer } from '../components/Alert';
+import React, { Component } from 'react'
+import { ScrollView, StatusBar, Linking } from 'react-native'
+import { ListItem, Separator, Icon } from '../components/List'
+import { AlertConsumer } from '../components/Alert'
 
-const ICON_COLOR = '#868686';
-const ICON_SIZE = 23;
+const ICON_COLOR = '#868686'
+const ICON_SIZE = 23
 
 class Options extends Component {
   handlePressThemes = () => {
-    this.props.navigation.navigate('Themes');
-  };
+    this.props.navigation.navigate('Themes')
+  }
 
   handlePressSite = () => {
     Linking.openURL('http://fixer.io').catch(() =>
-      this.props.alertWithType('error', 'Sorry!', "Fixer.io can't be opened right now."));
-  };
+      this.props.alertWithType('error', 'Sorry!', "Fixer.io can't be opened right now."))
+  }
 
   render() {
     return (
@@ -49,11 +49,11 @@ class Options extends Component {
         />
         <Separator />
       </ScrollView>
-    );
+    )
   }
 }
 export default props => (
   <AlertConsumer>
     {context => <Options alertWithType={context.alertWithType} {...props} />}
   </AlertConsumer>
-);
+)

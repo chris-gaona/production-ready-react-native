@@ -1,9 +1,9 @@
-import React from 'react';
-import { View, Text, TouchableHighlight } from 'react-native';
+import React from 'react'
+import { View, Text, TouchableHighlight } from 'react-native'
 
-import styles from './styles';
-import colors from '../../config/colors';
-import Icon from './Icon';
+import styles from './styles'
+import colors from '../../config/colors'
+import Icon from './Icon'
 
 const ListItem = ({
   text,
@@ -25,6 +25,6 @@ const ListItem = ({
       {customIcon}
     </View>
   </TouchableHighlight>
-);
+)
 
-export default ListItem;
+export default ListItem

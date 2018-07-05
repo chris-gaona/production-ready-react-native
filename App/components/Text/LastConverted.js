@@ -1,8 +1,8 @@
-import React from 'react';
-import { Text } from 'react-native';
-import { formatDate } from '../../util/dates';
+import React from 'react'
+import { Text } from 'react-native'
+import { formatDate } from '../../util/dates'
 
-import styles from './styles';
+import styles from './styles'
 
 const LastConverted = ({
   date, base, quote, conversionRate,
@@ -10,6 +10,6 @@ const LastConverted = ({
   <Text style={styles.smallText}>
     1 {base} = {conversionRate} {quote} as of {formatDate(date)}
   </Text>
-);
+)
 
-export default LastConverted;
+export default LastConverted

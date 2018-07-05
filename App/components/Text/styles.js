@@ -1,5 +1,5 @@
-import { StyleSheet } from 'react-native';
-import colors from '../../config/colors';
+import { StyleSheet } from 'react-native'
+import colors from '../../config/colors'
 
 export default StyleSheet.create({
   smallText: {
@@ -7,4 +7,4 @@ export default StyleSheet.create({
     textAlign: 'center',
     fontSize: 12,
   },
-});
+})
