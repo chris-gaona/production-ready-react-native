@@ -2,6 +2,7 @@ import { StyleSheet, Platform, StatusBar } from 'react-native'
 
 export default StyleSheet.create({
   container: {
+    flexDirection: 'row',
     position: 'absolute',
     left: 0,
     top: 0,
@@ -19,6 +20,10 @@ export default StyleSheet.create({
     alignSelf: 'flex-end',
     paddingVertical: 5,
     paddingHorizontal: 20,
+    flex: 1,
+  },
+  buttonRight: {
+    alignItems: 'flex-end',
   },
   icon: {
     width: 18,
