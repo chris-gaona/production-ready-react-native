@@ -9,9 +9,9 @@ export default class DropdownAlert extends React.Component {
     contentHeight: height,
     title: null,
     message: null,
-  };
+  }
 
-  animatedOffset = new Animated.Value(0);
+  animatedOffset = new Animated.Value(0)
 
   alertWithType = (type, title, message) => {
     this.setState(
@@ -27,13 +27,13 @@ export default class DropdownAlert extends React.Component {
         })
       },
     )
-  };
+  }
 
   measureContent = ({ nativeEvent }) => {
     this.setState({
       contentHeight: Math.ceil(nativeEvent.layout.height),
     })
-  };
+  }
 
   open = () =>
     new Promise((resolve) => {
@@ -41,7 +41,7 @@ export default class DropdownAlert extends React.Component {
         toValue: 1,
         useNativeDriver: true,
       }).start(() => resolve())
-    });
+    })
 
   close = () =>
     new Promise((resolve) => {
@@ -49,7 +49,7 @@ export default class DropdownAlert extends React.Component {
         toValue: 0,
         useNativeDriver: true,
       }).start(() => resolve())
-    });
+    })
 
   render() {
     const containerStyles = [

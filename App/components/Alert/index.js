@@ -6,7 +6,7 @@ const AlertContext = React.createContext({})
 export const AlertConsumer = AlertContext.Consumer
 
 export class AlertProvider extends React.Component {
-  alertWithType = (...args) => this.dropdown.alertWithType(...args);
+  alertWithType = (...args) => this.dropdown.alertWithType(...args)
 
   render() {
     return (
