@@ -11,7 +11,7 @@
     "react/jsx-filename-extension": [
       2,
       {
-        "extensions": [".js", ".jsx"]
+        "extensions": [".js", ".jsx", ".test.js"]
       }
     ],
     "react/require-default-props": [0],

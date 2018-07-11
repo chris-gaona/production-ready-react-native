@@ -30,7 +30,7 @@
     "eslint-plugin-import": "2.12.0",
     "eslint-plugin-jsx-a11y": "6.0.3",
     "eslint-plugin-react": "7.8.2",
-    "jest": "22.4.3",
+    "jest": "23.4.0",
     "jest-fetch-mock": "1.6.5",
     "prettier": "1.12.1",
     "prettier-eslint": "8.8.1",
@@ -40,6 +40,8 @@
   },
   "jest": {
     "preset": "react-native",
-    "setupFiles": ["./tests/setup.js"]
+    "setupFiles": [
+      "./tests/setup.js"
+    ]
   }
 }
