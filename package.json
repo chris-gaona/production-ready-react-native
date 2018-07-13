@@ -8,7 +8,8 @@
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "start": "node node_modules/react-native/local-cli/cli.js start",
-    "test": "jest"
+    "test": "jest",
+    "test:coverage": "jest --coverage && open coverage/lcov-report/index.html"
   },
   "dependencies": {
     "react": "16.3.1",
@@ -40,8 +41,7 @@
   },
   "jest": {
     "preset": "react-native",
-    "setupFiles": [
-      "./tests/setup.js"
-    ]
+    "setupFiles": ["./tests/setup.js"],
+    "collectCoverageFrom": ["App/**/*.js"]
   }
 }
