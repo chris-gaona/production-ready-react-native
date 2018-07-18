@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should set initial state 1`] = `
+Object {
+  "amount": 100,
+  "baseCurrency": "USD",
+  "conversions": Object {},
+  "error": null,
+  "quoteCurrency": "GBP",
+}
+`;
+
+exports[`should set the nested data on initial fetch 1`] = `
+Object {
+  "amount": 100,
+  "baseCurrency": "USD",
+  "conversions": Object {
+    "USD": Object {
+      "date": "",
+      "isFetching": true,
+      "rates": Object {},
+    },
+  },
+  "error": null,
+  "quoteCurrency": "GBP",
+}
+`;
